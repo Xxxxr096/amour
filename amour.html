@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pour Toi, Mon Amour 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose-doux: #ffb3d1;
+            --rose-pastel: #ffc0cb;
+            --rose-profond: #ff69b4;
+            --lavande: #e6e6fa;
+            --blanc-creme: #fdf5f5;
+            --or-rose: #f7c6c7;
+            --bordeaux: #b83c5a;
+            --violet-doux: #d8bfd8;
+            --corail: #ff7f7f;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, var(--blanc-creme), var(--lavande));
+            color: var(--bordeaux);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Particules flottantes d'amour */
+        .love-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: var(--rose-profond);
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-10px) rotate(180deg);
+                opacity: 1;
+            }
+        }
+
+        /* Navigation en forme de cœur */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(255, 179, 209, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            padding: 15px 30px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--bordeaux);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--bordeaux);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--rose-profond);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+        }
+
+        .nav-links a:hover::before {
+            left: 100%;
+        }
+
+        /* Hero Section - Déclaration d'amour */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 179, 209, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(230, 230, 250, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, var(--blanc-creme), var(--lavande));
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--rose-profond), var(--bordeaux), var(--corail));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            color: var(--bordeaux);
+            margin-bottom: 2rem;
+            font-style: italic;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--bordeaux);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 1s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Boutons romantiques */
+        .love-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+
+        .btn-love {
+            background: linear-gradient(45deg, var(--rose-profond), var(--corail));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-love::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn-love:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255, 105, 180, 0.5);
+        }
+
+        .btn-love:hover::before {
+            left: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--rose-profond);
+            color: var(--rose-profond);
+        }
+
+        .btn-outline:hover {
+            background: var(--rose-profond);
+            color: white;
+        }
+
+        /* Section À propos */
+        .about {
+            padding: 6rem 2rem;
+            background: var(--blanc-creme);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            color: var(--bordeaux);
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '💕';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .image-placeholder {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(45deg, var(--rose-pastel), var(--lavande));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--bordeaux);
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(255, 179, 209, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Galerie de souvenirs */
+        .memories {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--lavande), var(--rose-pastel));
+        }
+
+        .memories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .memory-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(255, 179, 209, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid var(--rose-pastel);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .memory-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--rose-profond), var(--corail));
+        }
+
+        .memory-card:hover {
+            transform: translateY(-10px) rotate(1deg);
+            box-shadow: 0 25px 50px rgba(255, 179, 209, 0.5);
+        }
+
+        .memory-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--rose-profond);
+        }
+
+        .memory-card h3 {
+            color: var(--bordeaux);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Messages d'amour */
+        .love-messages {
+            padding: 6rem 2rem;
+            background: var(--blanc-creme);
+            position: relative;
+        }
+
+        .messages-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .message-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 25px;
+            margin: 2rem 0;
+            box-shadow: 0 15px 35px rgba(255, 179, 209, 0.3);
+            border-left: 5px solid var(--rose-profond);
+            position: relative;
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .message-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--rose-profond);
+            opacity: 0.3;
+        }
+
+        .message-signature {
+            text-align: right;
+            margin-top: 1rem;
+            font-weight: bold;
+            color: var(--bordeaux);
+        }
+
+        /* Playlist d'amour */
+        .playlist {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--violet-doux), var(--rose-pastel));
+        }
+
+        .song-list {
+            max-width: 600px;
+            margin: 3rem auto 0;
+        }
+
+        .song-item {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 25px rgba(255, 179, 209, 0.3);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--rose-profond);
+        }
+
+        .song-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 15px 35px rgba(255, 179, 209, 0.4);
+        }
+
+        .song-icon {
+            font-size: 2rem;
+            color: var(--rose-profond);
+        }
+
+        .song-info h4 {
+            color: var(--bordeaux);
+            margin-bottom: 0.3rem;
+        }
+
+        .song-info p {
+            color: var(--bordeaux);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Footer romantique */
+        .footer {
+            background: linear-gradient(135deg, var(--bordeaux), var(--rose-profond));
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-heart {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .about-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Remplit bien le cercle */
+            border-radius: 50%; /* Rend l’image ronde */
+        }
+        
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .love-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .navbar {
+                top: 10px;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Effets spéciaux */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--rose-profond);
+            border-radius: 50%;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particules d'amour -->
+    <div class="love-particles" id="loveParticles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">💖 Mon Amour</div>
+            <ul class="nav-links">
+                <li><a href="#accueil">💕 Accueil</a></li>
+                <li><a href="#apropos">🌹 À Propos</a></li>
+                <li><a href="#souvenirs">📸 Souvenirs</a></li>
+                <li><a href="#messages">💌 Messages</a></li>
+                <li><a href="#playlist">🎵 Notre Playlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Pour Toi, Mon Amour</h1>
+            <p class="subtitle">La Plus Belle des Femmes 🌹</p>
+            <p>Ce site est créé spécialement pour toi, pour célébrer notre amour et tous ces moments magiques que nous partageons ensemble. Tu es ma source de joie, mon inspiration et ma raison de sourire chaque jour.</p>
+            <div class="love-buttons">
+                <a href="#messages" class="btn-love">💌 Lire mes messages</a>
+                <a href="#souvenirs" class="btn-love btn-outline">📸 Nos souvenirs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos -->
+    <section id="apropos" class="about">
+        <div class="container">
+            <h2 class="section-title">Tu es Exceptionnelle</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Chaque jour à tes côtés est un cadeau précieux. Ton sourire illumine mes journées et ton rire est la plus belle des mélodies. Tu as ce don unique de rendre tout plus beau, plus doux, plus significatif.</p>
+                    
+                    <p>Tes yeux racontent mille histoires, ton cœur déborde de gentillesse, et ton âme pure touche tous ceux qui ont la chance de te connaître. Tu es bien plus qu'une compagne, tu es ma complice, ma confidente, mon âme sœur.</p>
+                    
+                    <p>Merci d'être toi, authentique et merveilleuse. Merci de partager ta vie avec moi et de faire de chaque moment une aventure remplie d'amour.</p>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <img src="image/ma-photo.jpg" alt="Ma princesse" class="about-photo">
+                        <div class="sparkle" style="top: 20%; left: 15%;"></div>
+                        <div class="sparkle" style="top: 70%; right: 20%; animation-delay: 0.5s;"></div>
+                        <div class="sparkle" style="bottom: 30%; left: 25%; animation-delay: 1s;"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Souvenirs -->
+    <section id="souvenirs" class="memories">
+        <div class="container">
+            <h2 class="section-title">Nos Plus Beaux Souvenirs</h2>
+            <div class="memories-grid">
+                <div class="memory-card">
+                    <div class="memory-icon">🌅</div>
+                    <h3>Notre Premier Rendez-vous</h3>
+                    <p>Ce moment magique où nos regards se sont croisés et où j'ai su que tu étais spéciale. Le début de notre belle histoire d'amour.</p>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-icon">🏖️</div>
+                    <h3>Nos Vacances</h3>
+                    <p>Ces escapades romantiques où nous avons créé tant de souvenirs inoubliables, loin du monde, juste toi et moi.</p>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-icon">🎂</div>
+                    <h3>Anniversaires Spéciaux</h3>
+                    <p>Même à distance, chaque célébration avec toi devient extraordinaire. Tes sourires à travers l’écran, tes mots tendres et nos moments partagés malgré les kilomètres restent gravés dans mon cœur.</p>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-icon">⭐</div>
+                    <h3>Nos Soirées Étoilées</h3>
+                    <p>ême à distance, ces nuits où nous levons les yeux vers les mêmes étoiles me rappellent que nous partageons les mêmes rêves et que nous construisons notre avenir à deux.</p>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-icon">🏡</div>
+                    <h3>Moments du Quotidien</h3>
+                    <p>Ces petits instants simples mais précieux : nos petits déjeuners, nos fous rires, nos câlins sur le canapé.</p>
+                </div>
+                
+                <div class="memory-card">
+                    <div class="memory-icon">🎭</div>
+                    <h3>Nos Aventures</h3>
+                    <p>Même à distance, toutes ces découvertes que nous partageons, ces lieux que nous explorons chacun de notre côté mais que nous faisons vivre à travers nos récits et nos appels, sont des expériences qui nous rapprochent encore plus.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Messages d'amour -->
+    <section id="messages" class="love-messages">
+        <div class="container">
+            <h2 class="section-title">Messages du Cœur</h2>
+            <div class="messages-container">
+                <div class="message-card">
+                    Tu es la lumière qui guide mes pas dans l'obscurité, l'étoile qui brille dans mon ciel, la mélodie qui berce mon âme. Chaque battement de mon cœur prononce ton nom.
+                    <div class="message-signature">- Avec tout mon amour 💕</div>
+                </div>
+                
+                <div class="message-card">
+                    Dans tes bras, j'ai trouvé ma maison. Dans tes yeux, j'ai découvert mon avenir. Dans ton cœur, j'ai trouvé ma place. Tu es mon aujourd'hui et tous mes demains.
+                    <div class="message-signature">- Pour toujours tienne 🌹</div>
+                </div>
+                
+                <div class="message-card">
+                    Si je pouvais te donner une chose dans la vie, je te donnerais la possibilité de te voir à travers mes yeux. Alors tu réaliserais à quel point tu es précieuse et aimée.
+                    <div class="message-signature">- Ton admirateur éternel 💖</div>
+                </div>
+                
+                <div class="message-card">
+                    Tu transformes les jours ordinaires en moments extraordinaires, les sourires simples en éclats de bonheur. Avec toi, la vie devient une poésie vivante.
+                    <div class="message-signature">- Celui qui t'aime infiniment ✨</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Playlist -->
+    <section id="playlist" class="playlist">
+        <div class="container">
+            <h2 class="section-title">Notre Playlist d'Amour</h2>
+            <div class="song-list">
+                <div class="song-item">
+                    <div class="song-icon">🎵</div>
+                    <div class="song-info">
+                        <h4>Perfect - Ed Sheeran</h4>
+                        <p>Notre chanson, celle qui raconte parfaitement notre histoire</p>
+                    </div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-icon">💕</div>
+                    <div class="song-info">
+                        <h4>All of Me - John Legend</h4>
+                        <p>Parce que tu as tout mon cœur, toute mon âme</p>
+                    </div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-icon">🌙</div>
+                    <div class="song-info">
+                        <h4>La Vie en Rose - Édith Piaf</h4>
+                        <p>Depuis que tu es là, je vois la vie en rose</p>
+                    </div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-icon">⭐</div>
+                    <div class="song-info">
+                        <h4>A Thousand Years - Christina Perri</h4>
+                        <p>Je t'aimerai pour mille ans et mille ans encore</p>
+                    </div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-icon">💖</div>
+                    <div class="song-info">
+                        <h4>Thinking Out Loud - Ed Sheeran</h4>
+                        <p>Nos conversations qui durent des heures</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-heart">💕</div>
+        <h3>Je t'aime plus que les mots ne peuvent l'exprimer</h3>
+        <p>Ce site est ma petite façon de te dire à quel point tu comptes pour moi. Tu es mon bonheur, ma joie, ma vie.</p>
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.8;">
+            Créé avec tout mon amour 💖 • Pour toi, ma princesse 👸
+        </p>
+    </footer>
+
+    <script>
+        // Création des particules d'amour
+        function createLoveParticles() {
+            const container = document.getElementById('loveParticles');
+            const hearts = ['💕', '💖', '💗', '💝', '🌹', '✨', '💫', '🦋'];
+            
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 8000);
+            }
+            
+            setInterval(createHeart, 800);
+        }
+
+        // Navigation fluide
+        function smoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Effet de parallaxe sur la navigation
+        function parallaxNav() {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const navbar = document.querySelector('.navbar');
+                
+                if (scrolled > 100) {
+                    navbar.style.background = 'rgba(255, 179, 209, 0.98)';
+                    navbar.style.transform = 'translateX(-50%) scale(0.95)';
+                } else {
+                    navbar.style.background = 'rgba(255, 179, 209, 0.95)';
+                    navbar.style.transform = 'translateX(-50%) scale(1)';
+                }
+            });
+        }
+
+        // Animation des cartes au scroll
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.memory-card, .message-card, .song-item').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Effet de scintillement sur les étoiles
+        function sparkleEffect() {
+            const sparkles = document.querySelectorAll('.sparkle');
+            sparkles.forEach((sparkle, index) => {
+                sparkle.style.animationDelay = (index * 0.3) + 's';
+            });
+        }
+
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', function() {
+            createLoveParticles();
+            smoothScroll();
+            parallaxNav();
+            animateOnScroll();
+            sparkleEffect();
+        });
+
+        // Message spécial au clic sur le logo
+        document.querySelector('.logo').addEventListener('click', function() {
+            alert('💖 Tu es la plus belle chose qui me soit arrivée ! 💖');
+        });
+
+        // Effet sonore au survol des boutons (simulation)
+        document.querySelectorAll('.btn-love').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                console.log('✨ Effet sonore simulé ✨');
+                // Ici tu pourrais déclencher un son avec l'API Audio si tu veux
+            });
+        });
+    </script>
+</body>
+</html>
