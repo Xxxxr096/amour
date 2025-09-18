@@ -594,9 +594,59 @@
                 font-size: 2rem;
             }
         }
+                /* Pop-up personnalisé */
+        .popup {
+            display: none; /* caché par défaut */
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            color: var(--bordeaux);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: fadeIn 0.6s ease;
+            max-width: 400px;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px; right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--rose-profond);
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: scale(0.9);}
+            to {opacity: 1; transform: scale(1);}
+        }
+
 
     </style>
 </head>
+<!-- Pop-up personnalisé -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>🌹 Message du Jour 🌹</h2>
+        <p>Mon amour, tu es mon soleil, ma raison de sourire et mon bonheur infini 💖</p>
+    </div>
+</div>
+
 <body>
     <!-- Particules d'amour -->
     <div class="love-particles" id="loveParticles"></div>
@@ -886,9 +936,32 @@
         document.querySelectorAll('.btn-love').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
                 console.log('✨ Effet sonore simulé ✨');
-                // Ici tu pourrais déclencher un son avec l'API Audio si tu veux
+                
             });
         });
+        // Pop-up personnalisé
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('popup');
+            const closeBtn = document.querySelector('.close');
+
+            // Affiche le popup après 3 secondes
+            setTimeout(() => {
+                popup.style.display = 'flex';
+            }, 3000);
+
+            // Fermer au clic sur la croix
+            closeBtn.addEventListener('click', () => {
+                popup.style.display = 'none';
+            });
+
+            // Fermer au clic en dehors de la boîte
+            window.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.style.display = 'none';
+                }
+            });
+        });
+
     </script>
 </body>
 </html>
