@@ -313,6 +313,7 @@
             <h1>Mon Univers d'Amour ✨</h1>
             <p>Tu es ma galaxie, mon étoile la plus brillante</p>
         </div>
+    <div id="countdown" style="font-size:1.5rem; color:#fff; margin-top:20px; text-align:center;"></div>
 
         <div class="love-cards">
             <div class="love-card"><div class="card-icon">💫</div><h3 class="card-title">Tu es ma Constellation</h3><p class="card-message">Dans l'immensité de l'univers, tu es la constellation qui guide mon cœur.</p></div>
@@ -479,6 +480,50 @@
             document.body.appendChild(star);
             setTimeout(() => star.remove(), 1000);
         });
+                // Compteur persistant (1 semaine)
+        function startCountdown(minutes){
+            const countdownElement = document.getElementById("countdown");
+
+            // Vérifie si une date de fin existe déjà dans localStorage
+            let endTime = localStorage.getItem("countdownEndTime");
+
+            if(!endTime){
+                // Crée une nouvelle date de fin si elle n'existe pas
+                endTime = Date.now() + minutes * 60 * 1000;
+                localStorage.setItem("countdownEndTime", endTime);
+            } else {
+                endTime = parseInt(endTime);
+            }
+
+            function updateCountdown(){
+                const now = Date.now();
+                const diff = endTime - now;
+
+                if(diff <= 0){
+                    countdownElement.textContent = "⏳ Le site origine est revenu ! 🚀";
+                    localStorage.removeItem("countdownEndTime"); // reset automatique
+                    clearInterval(timer);
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                countdownElement.textContent = 
+                    `⏳ Retour du site origine dans : ${days} j ${hours} h ${mins} min ${secs} s`;
+            }
+
+            updateCountdown();
+            const timer = setInterval(updateCountdown, 1000);
+        }
+
+        // Lance un compteur de 1 semaine (10080 minutes)
+        document.addEventListener("DOMContentLoaded", () => {
+            startCountdown(10080);
+        });
+
     </script>
 </body>
 </html>
