@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Univers d'Amour</title>
+    <title>Pour Toi Mon Amour ❤️</title>
     <style>
         * {
             margin: 0;
@@ -12,163 +12,12 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: radial-gradient(ellipse at center, #1a1a3e 0%, #0a0a1a 70%, #000 100%);
+            font-family: 'Georgia', cursive;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #ffd1ff 75%, #ffc8dd 100%);
+            min-height: 100vh;
             overflow-x: hidden;
-            min-height: 100vh;
-            position: relative;
-            cursor: crosshair;
-        }
-
-        /* Étoiles animées */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.3; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* Nébuleuse */
-        .nebula {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 0, 255, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 0, 150, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(0, 150, 255, 0.2) 0%, transparent 50%);
-            animation: nebulaMove 20s ease-in-out infinite;
-        }
-
-        @keyframes nebulaMove {
-            0%, 100% { transform: translateX(0) translateY(0) scale(1); }
-            33% { transform: translateX(-20px) translateY(-10px) scale(1.1); }
-            66% { transform: translateX(20px) translateY(10px) scale(0.9); }
-        }
-
-        /* Planètes */
-        .planet {
-            position: absolute;
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-            cursor: pointer;
-        }
-
-        .planet1 {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
-            top: 20%;
-            left: 10%;
-            box-shadow: 0 0 30px rgba(255, 107, 107, 0.4);
-        }
-
-        .planet2 {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #4ecdc4, #44a08d);
-            top: 60%;
-            right: 15%;
-            box-shadow: 0 0 25px rgba(78, 205, 196, 0.4);
-        }
-
-        .planet3 {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(45deg, #feca57, #ff9ff3);
-            top: 70%;
-            left: 5%;
-            box-shadow: 0 0 35px rgba(254, 202, 87, 0.4);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            33% { transform: translateY(-20px) rotate(120deg); }
-            66% { transform: translateY(20px) rotate(240deg); }
-        }
-
-        /* Comètes */
-        .comet {
-            position: fixed;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 
-                0 0 10px white,
-                -100px 0 20px 2px rgba(255, 255, 255, 0.1),
-                -200px 0 30px 4px rgba(255, 255, 255, 0.05);
-            animation: cometFly 8s linear infinite;
-        }
-
-        @keyframes cometFly {
-            0% {
-                transform: translateX(-200px) translateY(100px);
-                opacity: 0;
-            }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% {
-                transform: translateX(calc(100vw + 200px)) translateY(-100px);
-                opacity: 0;
-            }
-        }
-
-        /* Container */
-        .container {
-            position: relative;
-            z-index: 10;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Titre */
-        .main-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .main-title h1 {
-            font-size: 4rem;
-            background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 3s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-            margin-bottom: 20px;
-        }
-
-        .main-title p {
-            font-size: 1.5rem;
-            color: #ffffff;
-            opacity: 0.9;
-            animation: glow 2s ease-in-out infinite alternate;
+            animation: gradientShift 10s ease infinite;
+            background-size: 400% 400%;
         }
 
         @keyframes gradientShift {
@@ -177,353 +26,418 @@
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes glow {
-            0% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.5); }
-            100% { text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.3); }
-        }
-
-        /* Cartes */
-        .love-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            width: 100%;
-            margin: 50px 0;
-        }
-
-        .love-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.5s ease;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .love-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.4);
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeInDown 1.5s ease;
         }
 
-        .card-icon {
-            font-size: 3rem;
+        h1 {
+            font-size: 4em;
+            color: white;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
             margin-bottom: 20px;
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 2s ease infinite;
         }
 
         @keyframes pulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            50% { transform: scale(1.05); }
         }
 
-        .card-title {
-            font-size: 1.8rem;
-            color: #ff6b6b;
-            margin-bottom: 15px;
-            font-weight: bold;
+        .subtitle {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .card-message {
-            font-size: 1.1rem;
-            color: #ffffff;
-            line-height: 1.6;
-            opacity: 0.9;
+        .heart-container {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
         }
 
-        /* Messages flottants */
-        .floating-message {
+        .heart {
             position: absolute;
-            background: linear-gradient(45deg, rgba(255, 107, 107, 0.2), rgba(255, 159, 243, 0.2));
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50px;
-            padding: 10px 20px;
-            color: white;
-            font-size: 0.9rem;
-            animation: floatMessage 15s linear infinite;
-            white-space: nowrap;
+            color: rgba(255, 105, 180, 0.7);
+            animation: float 6s ease-in-out infinite;
+            font-size: 20px;
         }
 
-        @keyframes floatMessage {
-            0% { transform: translateX(-100px); opacity: 0; }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { transform: translateX(calc(100vw + 100px)) translateY(-50px) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
 
-        /* Boutons */
-        .interactive-section {
-            text-align: center;
-            margin: 50px 0;
+        .love-box {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: fadeIn 2s ease;
         }
 
-        .heart-button {
-            background: linear-gradient(45deg, #ff6b6b, #ff9ff3);
+        .love-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .surprise-btn {
+            background: linear-gradient(135deg, #ff6b6b, #ff8cc3);
+            color: white;
             border: none;
             padding: 15px 30px;
-            font-size: 1.2rem;
-            color: white;
+            font-size: 1.2em;
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
             margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
+            animation: bounce 2s infinite;
         }
 
-        .heart-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.5);
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Cœurs qui suivent la souris */
-        .cursor-star {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: radial-gradient(circle, #fff, transparent);
+        .surprise-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(255,107,107,0.6);
+        }
+
+        .hidden-message {
+            display: none;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #333;
+            font-size: 1.1em;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .encouragement {
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 500px;
+            text-align: center;
+            font-size: 1.2em;
+            animation: fadeIn 3s ease;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             border-radius: 50%;
-            pointer-events: none;
-            animation: cursorFade 1s ease-out forwards;
-            z-index: 2000;
-        }
-        @keyframes cursorFade {
-            0% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.5); }
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            animation: rotate 20s linear infinite;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .main-title h1 { font-size: 2.5rem; }
-            .main-title p { font-size: 1.2rem; }
-            .love-cards { grid-template-columns: 1fr; gap: 20px; }
+        .photo-frame:hover {
+            transform: scale(1.2);
+            animation-play-state: paused;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .floating-text {
+            position: fixed;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            pointer-events: none;
+            animation: floatAcross 15s linear infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        @keyframes floatAcross {
+            from {
+                left: -200px;
+                transform: translateY(0) rotate(0deg);
+            }
+            to {
+                left: 100%;
+                transform: translateY(-50px) rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            animation: sparkle 1s ease-out forwards;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 1;
+                transform: scale(0) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1.5) rotate(180deg);
+            }
+        }
+
+        .love-counter {
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            margin: 30px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        #counter {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffeb3b;
         }
     </style>
 </head>
 <body>
-    <div class="stars" id="stars"></div>
-    <div class="nebula"></div>
-    <div class="planet planet1" onclick="planetMessage('🌍 Tu es ma planète préférée dans l’univers !')"></div>
-    <div class="planet planet2" onclick="planetMessage('💫 Même les galaxies t’envient !')"></div>
-    <div class="planet planet3" onclick="planetMessage('✨ Ton sourire éclaire tout le cosmos !')"></div>
+    <div class="heart-container" id="heartContainer"></div>
+    
     <div class="container">
-        <div class="main-title">
-            <h1>Mon Univers d'Amour ✨</h1>
-            <p>Tu es ma galaxie, mon étoile la plus brillante</p>
-        </div>
-    <div id="countdown" style="font-size:1.5rem; color:#fff; margin-top:20px; text-align:center;"></div>
-
-        <div class="love-cards">
-            <div class="love-card"><div class="card-icon">💫</div><h3 class="card-title">Tu es ma Constellation</h3><p class="card-message">Dans l'immensité de l'univers, tu es la constellation qui guide mon cœur.</p></div>
-            <div class="love-card"><div class="card-icon">🌟</div><h3 class="card-title">Mon Étoile Filante</h3><p class="card-message">Tu es apparue dans ma vie comme une étoile filante...</p></div>
-            <div class="love-card"><div class="card-icon">🌙</div><h3 class="card-title">Ma Lune Précieuse</h3><p class="card-message">Comme la lune éclaire la nuit, tu éclaires mes journées.</p></div>
-            <div class="love-card"><div class="card-icon">🪐</div><h3 class="card-title">Notre Planète d'Amour</h3><p class="card-message">Ensemble, nous avons créé notre propre planète d’amour.</p></div>
-            <div class="love-card"><div class="card-icon">🌌</div><h3 class="card-title">Notre Galaxie Éternelle</h3><p class="card-message">Notre amour est comme une galaxie en expansion.</p></div>
-            <div class="love-card"><div class="card-icon">💖</div><h3 class="card-title">Mon Cœur Cosmique</h3><p class="card-message">Tu es le centre de mon univers, mon soleil.</p></div>
+        <div class="hero">
+            <h1>❤️ Pour Toi, Mon Amour ❤️</h1>
+            <p class="subtitle">Chaque jour avec toi est un cadeau précieux</p>
         </div>
 
-        <div class="interactive-section">
-            <button class="heart-button" onclick="createHeartExplosion(event)">Cœurs magiques 💕</button>
-            <button class="heart-button" onclick="showSurpriseMessage()">Message surprise 🎁</button>
+        <div class="love-box" onclick="revealMessage(1)">
+            <h2 style="color: #ff6b6b; text-align: center;">💕 Clique ici pour une surprise! 💕</h2>
+            <div id="message1" class="hidden-message">
+                Tu es la lumière qui illumine mes journées, la raison de mon sourire, et mon plus grand bonheur. Je t'aime plus que les mots ne peuvent l'exprimer! ✨
+            </div>
+        </div>
+
+        <div class="encouragement">
+            <h3>💪 Tu es incroyable! 💪</h3>
+            <p>N'oublie jamais à quel point tu es forte, belle et talentueuse. Tu peux accomplir tout ce que tu entreprends. Je crois en toi de tout mon cœur!</p>
+        </div>
+
+        <div class="photo-frame" onclick="showLove()">
+            💝
+        </div>
+
+        <div style="text-align: center;">
+            <button class="surprise-btn" onclick="surprise1()">🎁 Surprise #1</button>
+            <button class="surprise-btn" onclick="surprise2()">🌟 Surprise #2</button>
+            <button class="surprise-btn" onclick="surprise3()">💖 Surprise #3</button>
+        </div>
+
+        <div class="love-box" onclick="revealMessage(2)">
+            <h2 style="color: #764ba2; text-align: center;">🌈 Un autre message caché! 🌈</h2>
+            <div id="message2" class="hidden-message">
+                Chaque moment passé avec toi est magique. Tu rends ma vie colorée et pleine de joie. Merci d'être toi, merci d'être là, merci de m'aimer. Je t'aime à l'infini! 🌟
+            </div>
+        </div>
+
+        <div class="love-counter">
+            <p>Nombre de jours où je t'aime:</p>
+            <div id="counter">∞</div>
+        </div>
+
+        <div class="love-box" style="background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);">
+            <h2 style="color: white; text-align: center;">🎯 Tes objectifs, mes encouragements 🎯</h2>
+            <p style="color: white; text-align: center; margin-top: 20px;">
+                Quoi que tu entreprennes, sache que je serai toujours là pour te soutenir. 
+                Tu es capable de déplacer des montagnes! Continue de briller ma belle étoile! ⭐
+            </p>
         </div>
     </div>
 
+    <div class="floating-text" style="top: 20%;">Je t'aime</div>
+    <div class="floating-text" style="top: 50%; animation-delay: 5s;">Tu es magnifique</div>
+    <div class="floating-text" style="top: 80%; animation-delay: 10s;">Mon cœur t'appartient</div>
+
     <script>
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const numberOfStars = 200;
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.width = Math.random() * 3 + 1 + 'px';
-                star.style.height = star.style.width;
-                star.style.animationDelay = Math.random() * 2 + 's';
-                star.style.animationDuration = (Math.random() * 2 + 1) + 's';
-                starsContainer.appendChild(star);
-            }
+        // Génération de cœurs flottants
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('heartContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
         }
 
-        function createFloatingMessage() {
-            const messages = ["Je t'aime 💕","Tu es magnifique ✨","Mon cœur bat pour toi 💖","Tu es mon univers 🌟","Pour toujours toi et moi 💞"];
-            const message = document.createElement('div');
-            message.className = 'floating-message';
-            message.textContent = messages[Math.floor(Math.random() * messages.length)];
-            message.style.top = Math.random() * 80 + 10 + '%';
-            message.style.left = '-150px';
-            document.body.appendChild(message);
-            setTimeout(() => message.remove(), 15000);
+        setInterval(createHeart, 2000);
+
+        // Révéler les messages cachés
+        function revealMessage(num) {
+            const message = document.getElementById('message' + num);
+            message.style.display = message.style.display === 'block' ? 'none' : 'block';
+            createSparkles(event.pageX, event.pageY);
         }
 
-        function createHeartExplosion(event) {
-            const explosion = document.createElement('div');
-            explosion.style.position = 'fixed';
-            explosion.style.left = event.clientX + 'px';
-            explosion.style.top = event.clientY + 'px';
-            explosion.style.zIndex = 1000;
-            for (let i = 0; i < 15; i++) {
-                const heart = document.createElement('div');
-                heart.innerHTML = '💖';
-                heart.style.position = 'absolute';
-                heart.style.left = (Math.random() - 0.5) * 100 + 'px';
-                heart.style.top = (Math.random() - 0.5) * 100 + 'px';
-                heart.style.animation = 'heartFloat 2s ease-out forwards';
-                explosion.appendChild(heart);
-            }
-            document.body.appendChild(explosion);
-            setTimeout(() => explosion.remove(), 2000);
+        // Surprises
+        function surprise1() {
+            alert("💕 SURPRISE! 💕\n\nTu es la personne la plus merveilleuse que je connaisse!\nTon sourire illumine ma vie!\nJe t'aime plus chaque jour!");
+            confetti();
         }
-        function showSurpriseMessage() {
-            const surpriseMessages = [
-                "🌟 Tu illumines ma galaxie comme aucune étoile ne pourrait le faire ! 🌟",
-                "💫 Dans l'infini de l'univers, tu es ma seule certitude ! 💫",
-                "🌙 Même les planètes s'arrêtent de tourner quand elles voient ton sourire ! 🌙",
-                "🪐 Notre amour défie les lois de la physique quantique ! 🪐",
-                "✨ Tu es plus précieuse que toutes les étoiles filantes réunies ! ✨",
-                "💖 Ton rire est la mélodie qui apaise toutes mes tempêtes. 💖",
-                "🌌 Dans chaque univers possible, c’est toujours toi que je choisis. 🌌",
-                "☀️ Tu es mon lever de soleil, même dans mes nuits les plus sombres. ☀️",
-                "🌠 Si je pouvais écrire ton nom dans le ciel, il couvrirait toutes les constellations. 🌠",
-                "💎 Ton cœur est plus rare et précieux que tous les diamants de l’univers. 💎",
-                "🔥 Tu es la flamme douce qui réchauffe mon âme glacée. 🔥",
-                "🌹 Être près de toi, c’est respirer le parfum éternel du bonheur. 🌹",
-                "🎶 Ton amour est la plus belle symphonie que l’univers ait jamais composée. 🎶",
-                "🌈 Avec toi, même la pluie se transforme en arc-en-ciel. 🌈",
-                "⚡ Ton regard a le pouvoir de faire vibrer tout mon univers. ⚡",
-                "🪽 Tu es mon miracle quotidien, mon rêve devenu réalité. 🪽",
-                "🏹 Ton amour a touché mon cœur plus fort qu’aucune flèche de Cupidon. 🏹",
-                "💞 Chaque battement de mon cœur murmure ton prénom. 💞",
-                "🌻 Comme un soleil pour une fleur, tu es ma raison de m’épanouir. 🌻",
-                "🕊️ Avec toi, je me sens libre, léger, éternellement vivant. 🕊️"
+
+        function surprise2() {
+            const messages = [
+                "Tu es mon soleil ☀️",
+                "Tu es ma lune 🌙",
+                "Tu es mes étoiles ⭐",
+                "Tu es mon univers 🌌",
+                "Tu es tout pour moi 💝"
             ];
-            
-            const randomMessage = surpriseMessages[Math.floor(Math.random() * surpriseMessages.length)];
-            
-            const messageDiv = document.createElement('div');
-            messageDiv.style.cssText = `
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background: linear-gradient(45deg, rgba(255, 107, 107, 0.95), rgba(255, 159, 243, 0.95));
-                color: white;
-                padding: 30px;
-                border-radius: 20px;
-                text-align: center;
-                font-size: 1.2rem;
-                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                z-index: 2000;
-                animation: messageAppear 0.5s ease-out;
-                max-width: 80%;
-            `;
-            
-            messageDiv.innerHTML = `
-                <p style="margin-bottom:15px;">${randomMessage}</p>
-                <button onclick="this.parentElement.remove()" style="
-                    background: rgba(255, 255, 255, 0.2);
-                    border: 1px solid rgba(255, 255, 255, 0.3);
-                    color: white;
-                    padding: 10px 20px;
-                    border-radius: 25px;
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                " onmouseover="this.style.background='rgba(255,255,255,0.3)'" 
-                   onmouseout="this.style.background='rgba(255,255,255,0.2)'">
-                    Fermer 💕
-                </button>
-            `;
-            
-            document.body.appendChild(messageDiv);
-        
-            // Animation CSS si pas déjà définie
-            if (!document.getElementById('popup-style')) {
-                const style = document.createElement('style');
-                style.id = 'popup-style';
-                style.textContent = `
-                    @keyframes messageAppear {
-                        0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-                        100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-                    }
-                `;
-                document.head.appendChild(style);
+            let msg = messages.join('\n');
+            alert("🌟 SURPRISE SPÉCIALE! 🌟\n\n" + msg);
+            changeBackground();
+        }
+
+        function surprise3() {
+            alert("💖 LA PLUS GRANDE SURPRISE 💖\n\nMon amour pour toi est...\n\n∞ INFINI ∞\n\nEt il grandit encore chaque seconde!");
+            createManyHearts();
+        }
+
+        function showLove() {
+            alert("💝 Tu as cliqué sur mon cœur! 💝\n\nIl bat uniquement pour toi!\nBADOUM BADOUM BADOUM\n\n❤️❤️❤️");
+        }
+
+        // Créer des étincelles
+        function createSparkles(x, y) {
+            for(let i = 0; i < 10; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.innerHTML = '✨';
+                sparkle.style.left = x + 'px';
+                sparkle.style.top = y + 'px';
+                sparkle.style.fontSize = Math.random() * 20 + 10 + 'px';
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 1000);
             }
         }
-        
 
-        function planetMessage(msg) { alert(msg); }
+        // Effet confetti
+        function confetti() {
+            const emojis = ['🎉', '🎊', '💕', '✨', '🌟', '💖', '🎈', '🦋'];
+            for(let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-50px';
+                    confetti.style.fontSize = '30px';
+                    confetti.style.transition = 'all 3s ease';
+                    confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.style.top = '100vh';
+                        confetti.style.transform = 'rotate(720deg)';
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 100);
+            }
+        }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            createStars();
-            setInterval(createFloatingMessage, 4000);
+        // Changer le fond
+        function changeBackground() {
+            const colors = [
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+            ];
+            document.body.style.background = colors[Math.floor(Math.random() * colors.length)];
+        }
 
-            // Ajouter plusieurs comètes
-            setInterval(() => {
-                const comet = document.createElement('div');
-                comet.className = 'comet';
-                comet.style.top = Math.random() * window.innerHeight + 'px';
-                document.body.appendChild(comet);
-                setTimeout(() => comet.remove(), 8000);
-            }, 5000);
-        });
+        // Créer beaucoup de cœurs
+        function createManyHearts() {
+            for(let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createHeart();
+                }, i * 200);
+            }
+        }
 
-        // Particules qui suivent la souris
-        document.addEventListener('mousemove', e => {
-            const star = document.createElement('div');
-            star.className = 'cursor-star';
-            star.style.left = e.pageX + 'px';
-            star.style.top = e.pageY + 'px';
-            document.body.appendChild(star);
-            setTimeout(() => star.remove(), 1000);
-        });
-                // Compteur persistant (1 semaine)
-        function startCountdown(minutes){
-            const countdownElement = document.getElementById("countdown");
-
-            // Vérifie si une date de fin existe déjà dans localStorage
-            let endTime = localStorage.getItem("countdownEndTime");
-
-            if(!endTime){
-                // Crée une nouvelle date de fin si elle n'existe pas
-                endTime = Date.now() + minutes * 60 * 1000;
-                localStorage.setItem("countdownEndTime", endTime);
+        // Animation du compteur
+        let loveCount = 1;
+        setInterval(() => {
+            loveCount += Math.floor(Math.random() * 100);
+            if(Math.random() > 0.9) {
+                document.getElementById('counter').innerHTML = '∞';
             } else {
-                endTime = parseInt(endTime);
+                document.getElementById('counter').innerHTML = loveCount.toLocaleString();
             }
+        }, 2000);
 
-            function updateCountdown(){
-                const now = Date.now();
-                const diff = endTime - now;
-
-                if(diff <= 0){
-                    countdownElement.textContent = "⏳ Le site origine est revenu ! 🚀";
-                    localStorage.removeItem("countdownEndTime"); // reset automatique
-                    clearInterval(timer);
-                    return;
-                }
-
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
-                countdownElement.textContent = 
-                    `⏳ Retour du site origine dans : ${days} j ${hours} h ${mins} min ${secs} s`;
-            }
-
-            updateCountdown();
-            const timer = setInterval(updateCountdown, 1000);
-        }
-
-        // Lance un compteur de 1 semaine (10080 minutes)
-        document.addEventListener("DOMContentLoaded", () => {
-            startCountdown(10080);
-        });
-
+        // Message de bienvenue
+        setTimeout(() => {
+            alert("🌹 Bienvenue sur ce site créé spécialement pour toi! 🌹\n\nExplore chaque section, clique partout, et découvre tous les messages d'amour cachés!\n\nJe t'aime! ❤️");
+        }, 2000);
     </script>
 </body>
 </html>
